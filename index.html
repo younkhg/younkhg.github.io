@@ -1,1 +1,56 @@
-Hello World
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Keehong Youn</title>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <style type="text/css">
+        body { background: black; margin-left: 5%; margin-right: 5%; line-height: 1.5}
+        h1 { font-family: Arial, sans-serif; font-size: 32px; color: lightgray;  }     
+
+        nav { font-family: "Courier New", monospace; font-size: 18px; color: dimgray;  }
+        a:link { color: darkgray; background-color: transparent; text-decoration: none; }
+        a:visited { color: darkgray; background-color: transparent; text-decoration: none; }
+        a:hover { color: lightgray; background-color: transparent; text-decoration: none; }
+        a:active { color: lightgray; background-color: transparent; text-decoration: none; }
+
+        #article_text { font-family: Arial, sans-serif; font-size: 14px; color: darkgray;}
+        #article_links { font-family: "Courier New", monospace; font-size: 14px; color: darkgray;}
+
+        .footers { font-family: Arial, sans-serif; font-size: 14px; color: dimgray;  }
+
+        .customHr {
+            background-color: dimgray;
+            margin-top: 15px;
+            height: 1px;
+        }
+    </style>
+
+    <header><h1><a href="" id="homelink">Keehong Youn</a></h1></header>
+
+    <nav>
+        <!-- when clicked, changes content in `article` -->
+        <a class="navlink" href="" id="link04">link4</a>&nbsp;|
+        <a class="navlink" href="" id="link03">link3</a>&nbsp;|
+        <a class="navlink" href="" id="link02">link2</a>&nbsp;|
+        <a class="navlink" href="" id="link01">link1</a>
+        <br>
+        <a class="navlink" href="" id="link00">about</a>
+    </nav>
+
+    <div class="customHr"></div>
+
+    <article>
+        <p id="article_text"></p>
+        <p id="article_links"></p>
+    </article>
+
+    <div class="customHr"></div>
+
+    <footer><p class="footers">younkeehong@gmail.com</p></footer>
+</body>
+
+</html>
