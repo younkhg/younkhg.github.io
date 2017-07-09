@@ -38,28 +38,24 @@ window.onload = function() {
         empty_article();
 
         article_text.textContent = "article 1";
-        console.log("1");
     });
 
     // 2:
     functions.set(2, function() {
         empty_article();
         article_text.textContent = "article 2";
-        console.log("2");
     });
 
     // 3:
     functions.set(3, function() {
         empty_article();
         article_text.textContent = "article 3";
-        console.log("3");
     });
 
     // 4:
     functions.set(4, function() {
         empty_article();
         article_text.textContent = "article 4";
-        console.log("4");
     });
 
     // linking links in nav will change content of article
