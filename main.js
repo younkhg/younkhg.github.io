@@ -30,13 +30,11 @@ window.onload = function() {
         article_links.appendChild(document.createElement("br"));
         article_links.appendChild(document.createTextNode("- "));
         article_links.appendChild(make_link("naver", "http://www.naver.com"));
-        console.log("0");
     });
 
     // 1:
     functions.set(1, function() {
         empty_article();
-
         article_text.textContent = "article 1";
     });
 
