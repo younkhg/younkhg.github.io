@@ -19,8 +19,19 @@ window.onload = function() {
         return a;
     }
 
-    // 0:
-    functions.set(0, function() {
+    functions.set("blog", function() {
+        empty_article();
+        article_text.textContent = "blog";
+        article_links.appendChild(document.createTextNode("links:"));
+        article_links.appendChild(document.createElement("br"));
+        article_links.appendChild(document.createTextNode("- "));
+        article_links.appendChild(make_link("google", "http://www.google.com"));
+        article_links.appendChild(document.createElement("br"));
+        article_links.appendChild(document.createTextNode("- "));
+        article_links.appendChild(make_link("naver", "http://www.naver.com"));
+    });
+
+    functions.set("about", function() {
         empty_article();
         article_text.textContent = "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?";
         article_links.appendChild(document.createTextNode("links:"));
@@ -32,26 +43,28 @@ window.onload = function() {
         article_links.appendChild(make_link("naver", "http://www.naver.com"));
     });
 
-    // 1:
-    functions.set(1, function() {
+    functions.set("link01", function() {
         empty_article();
-        article_text.textContent = "article 1";
+        article_text.innerHTML = `
+            <p>link01</p>
+            <a href="http://www.google.com">a link in literal</a>
+        `;
+        article_links.innerHTML = `
+            <a href="http://www.google.com" target="_blank">a link in literal</a>
+        `;
     });
 
-    // 2:
-    functions.set(2, function() {
+    functions.set("link02", function() {
         empty_article();
         article_text.textContent = "article 2";
     });
 
-    // 3:
-    functions.set(3, function() {
+    functions.set("link03", function() {
         empty_article();
         article_text.textContent = "article 3";
     });
 
-    // 4:
-    functions.set(4, function() {
+    functions.set("link04", function() {
         empty_article();
         article_text.textContent = "article 4";
     });
@@ -61,14 +74,19 @@ window.onload = function() {
     for (let i = 0; i < navlinks.length; i += 1) {
         let link = navlinks[i];
         link.onclick = function() {
-            functions.get(Number(link.id.substring(link.id.length - 2)))();
+            // functions.get(Number(link.id.substring(link.id.length - 2)))();
+            functions.get(link.id)();
             return false;
         }
     }
 
+    // go front page if my name clicked
     let homelink = document.getElementById("homelink");
-    homelink.onclick = function() {
+    let homefunction = function() {
         empty_article();
+        article_text.textContent = "empty home page";
         return false;
     }
+    homelink.onclick = homefunction;
+    homefunction();
 }
