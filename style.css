@@ -1,0 +1,21 @@
+html * {max-height:1000000px;} /* hack to disable font boosting*/
+
+body { background: black; margin-left: 5%; margin-right: 5%; line-height: 1.5 }
+h2 { font-family: Arial, sans-serif; color: lightgray; }
+
+nav { font-family: "Courier New", monospace; color: dimgray;  }
+a:link { color: darkgray; text-decoration: none; }
+a:visited { color: darkgray; text-decoration: none; }
+a:hover { color: lightgray; text-decoration: none; }
+a:active { color: lightgray; text-decoration: none; }
+
+#article_text { font-family: Arial, sans-serif; color: darkgray; }
+#article_links { font-family: "Courier New", monospace; color: darkgray; }
+
+.footers { font-family: Arial, sans-serif; color: dimgray;  }
+
+.customHorizontalLine {
+    background-color: dimgray;
+    margin-top: 15px;
+    height: 1px;
+}
