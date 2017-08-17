@@ -9,9 +9,9 @@ window.onload = function() {
         <a href="">link4</a>&nbsp;|
         <a href="">link3</a>&nbsp;|
         <a href="">link2</a>&nbsp;|
-        <a href="rotation01.html">rotations 1</a>
+        <a href="rotation01.html">rotations, n=3</a>&nbsp;|
         <br>
-        <a href="">blog</a>&nbsp;|
+        <a href="blog_main.html">blog</a>&nbsp;|
         <a href="about.html">about</a>&nbsp;|
     `;
 
