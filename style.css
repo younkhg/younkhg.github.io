@@ -19,3 +19,8 @@ a:active { color: lightgray; text-decoration: none; }
     margin-top: 15px;
     height: 1px;
 }
+
+.visualContent {
+	width:100%;
+	max-width: 640px;
+}
