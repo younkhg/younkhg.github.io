@@ -1,0 +1,67 @@
+h1, h2, h3, h4, h5, h6 {
+  color: #303030;
+  font-weight: 300;
+}
+
+.site-container {
+  background-color: white;
+  max-width: 640px;
+  margin: auto;
+  padding-top: 20px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #000000;
+}
+
+.nav-container {
+  /*background-color: lightgray;*/
+  font-size: 18px;
+  overflow: auto; /* wrap children */
+  line-height: 1.5
+}
+
+.nav-container a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.left-nav { float: left; }
+.right-nav { float: right }
+
+@media (max-width: 340px) {
+  .left-nav {
+    float: none; /* erase float */
+    display: block;
+  }
+  .right-nav {
+    float: left
+  }
+}
+
+.content-container {
+  /*background-color: green;*/
+  line-height: 1;
+}
+
+.content-container a:link,
+.content-container a:visited {
+  color: #103080;
+}
+
+.content-container a:hover,
+.content-container a:active {
+  color: #2050b0;
+}
+
+.bloglink-container a:link,
+.bloglink-container a:visited {
+  color: #000000;
+  text-decoration: none;
+}
+
+.bloglink-container a:hover,
+.bloglink-container a:active {
+  color: #000000;
+  text-decoration: none;
+}
