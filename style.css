@@ -11,6 +11,30 @@ div {
     padding-top: 20px;
 }
 
+ita { font-style: italic; }
+
+auth {
+  text-align: right;
+  display: block;
+}
+
+bibl {
+  font-size: 14px;
+  display: block;
+}
+
+ln {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+}
+
+updatedate {
+  text-align: right;
+  display: block;
+  font-size: 14px
+}
+
 .nav-container {
   background-color: white;
   max-width: 640px;
@@ -31,6 +55,7 @@ div {
   max-width: 640px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 150px;
   color: black;
   font-family: serif;
   font-size: 18px;
@@ -46,9 +71,11 @@ div {
   max-width: 640px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 150px;
   color: black;
   font-family: serif;
   font-size: 18px;
+  line-height: 1.5;
 }
 
 .content-container a {
