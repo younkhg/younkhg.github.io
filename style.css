@@ -18,6 +18,11 @@ auth {
   display: block;
 }
 
+note {
+  font-size: 14px;
+  display: block;
+}
+
 bibl {
   font-size: 14px;
   display: block;
