@@ -18,11 +18,6 @@ auth {
   display: block;
 }
 
-note {
-  font-size: 14px;
-  display: block;
-}
-
 bibl {
   font-size: 14px;
   display: block;
@@ -32,12 +27,6 @@ ln {
   display: block;
   text-align: center;
   font-size: 14px;
-}
-
-updatedate {
-  text-align: right;
-  display: block;
-  font-size: 14px
 }
 
 .nav-container {
