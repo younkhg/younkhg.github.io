@@ -1,6 +1,19 @@
 /*disable font boosting on mobile*/
 html * {
-  max-height: 1000000px;
+    max-height: 1000000px;
+}
+
+/* scrollbar hack #1 */
+html {
+    margin-left: calc(100vw - 100%);
+    margin-right: 0;
+}
+
+/* scrollbar hack #2 */
+@media screen and (max-width: 640px) {
+    html {
+        margin-left: 0;
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {
