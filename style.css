@@ -1,4 +1,4 @@
-/*disable font boosting on mobile*/
+/* disable font boosting on mobile */
 html * {
     max-height: 1000000px;
 }
