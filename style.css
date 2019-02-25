@@ -7,6 +7,7 @@ html * {
 html {
     margin-left: calc(100vw - 100%);
     margin-right: 0;
+    background-color: #F0F0F0;
 }
 
 /* scrollbar hack #2 */
@@ -25,7 +26,6 @@ div {
 }
 
 .nav-container {
-  background-color: white;
   max-width: 640px;
   margin-left: auto;
   margin-right: auto;
@@ -40,7 +40,6 @@ div {
 }
 
 .list-container {
-  background-color: white;
   max-width: 640px;
   margin-left: auto;
   margin-right: auto;
@@ -56,7 +55,6 @@ div {
 }
 
 .content-container {
-  background-color: white;
   max-width: 640px;
   margin-left: auto;
   margin-right: auto;
