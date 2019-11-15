@@ -8,6 +8,7 @@ html {
     margin-left: calc(100vw - 100%);
     margin-right: 0;
     background-color: #F0F0F0;
+    padding: 10px
 }
 
 /* scrollbar hack #2 */
@@ -25,44 +26,32 @@ div {
     padding-top: 20px;
 }
 
-.nav-container {
+body {
   max-width: 640px;
   margin-left: auto;
   margin-right: auto;
-  color: black;
+  color: #404040;
   font-family: serif;
   font-size: 18px;
+  line-height: 1.5;
 }
 
 .nav-container a {
-  color: #000000;
+  color: #404040;
   text-decoration: none;
 }
 
 .list-container {
-  max-width: 640px;
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 150px;
-  color: black;
-  font-family: serif;
-  font-size: 18px;
 }
 
 .list-container a {
-  color: #000000;
+  color: #404040;
   text-decoration: none;
 }
 
 .content-container {
-  max-width: 640px;
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 150px;
-  color: black;
-  font-family: serif;
-  font-size: 18px;
-  line-height: 1.5;
 }
 
 .content-container a {
@@ -80,20 +69,4 @@ div {
   margin-left: auto;
   margin-right: auto;
   height: auto;
-}
-
-@media (max-width: 640px)
-{
-  .nav-container
-  {
-    font-size: 12px;
-  }
-  .list-container
-  {
-    font-size: 12px;
-  }
-  .content-container
-  {
-    font-size: 12px;
-  }
 }
