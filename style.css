@@ -30,6 +30,7 @@ body {
   max-width: 640px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 150px;
   color: #404040;
   font-family: serif;
   font-size: 18px;
@@ -41,17 +42,9 @@ body {
   text-decoration: none;
 }
 
-.list-container {
-  margin-bottom: 150px;
-}
-
 .list-container a {
   color: #404040;
   text-decoration: none;
-}
-
-.content-container {
-  margin-bottom: 150px;
 }
 
 .content-container a {
