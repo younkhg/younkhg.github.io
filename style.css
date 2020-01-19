@@ -36,7 +36,7 @@ body img {
 }
 
 .imgcaption {
-  max-width: 68vw;
+  max-width: 34em; /* 0.68 of 50 */
   margin: -0.5em auto 0.5em auto; /* relay img's 1.2em padding bottom*/
   font-size: small;
   text-align: center;
@@ -50,6 +50,9 @@ body img {
     body img {
         max-width: 76vw;
         margin: 0 auto;
+    }
+    .imgcaption {
+      max-width: 68vw;
     }
 }
 
