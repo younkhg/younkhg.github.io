@@ -1,65 +1,87 @@
 /* disable font boosting on mobile */
-html * {
+/*html * {
     max-height: 1000000px;
 }
+*/
 
-/* scrollbar hack #1 */
 html {
+    /* scrollbar hack #1 */
     margin-left: calc(100vw - 100%);
     margin-right: 0;
-    background-color: #F0F0F0;
-    padding: 10px
-}
 
-/* scrollbar hack #2 */
-@media screen and (max-width: 640px) {
-    html {
-        margin-left: 0;
-    }
+    background-color: #F5F5F5;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
 }
 
-div {
-    padding-top: 20px;
-}
-
 body {
-  max-width: 640px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 150px;
-  color: #404040;
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
+  max-width: 40em; /* 0.8 of 50 */
+
+  color: #303030;
+  font: 1em sans-serif;
   line-height: 1.5;
+  font-weight: 300;
+
+  margin: 2em auto;
+  padding: 0 1em; /* +1em left and right makes 40 */
 }
 
-.nav-container a {
-  color: #404040;
+body img {
+  display: block;
+  max-width: 38em; /* 0.76 of 50 */
+  margin: 0 auto;
+  padding: 1.2em 0;
+}
+
+.imgcaption {
+  max-width: 40vw;
+  margin: -1.2em auto 1.2em auto; /* negate img's 1em padding bottom*/
+  font-size: small;
+  text-align: center;
+}
+
+/* scrollbar hack #2 */
+@media screen and (max-width: 50em) {
+    body {
+        max-width: 80vw
+    }
+    body img {
+        max-width: 76vw;
+        margin: 0 auto;
+    }
+}
+
+/* site specific visual style */
+
+nav a {
+  color: #303030;
   text-decoration: none;
+}
+
+.list-container {
+    text-align: right;
 }
 
 .list-container a {
-  color: #404040;
+  color: #303030;
   text-decoration: none;
+}
+
+.list-title {
+  margin-right: 1em;
+  margin-bottom: -1.5em; /* negate img's 1em padding top */
+  padding-top: 0.5em; /* move away from elem above */
 }
 
 .content-container a {
   color: #1060a0;
 }
 
-.body-img {
-  display: block;
-  text-align: center;
-}
-
-.body-img img {
-  display: block;
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  height: auto;
+/* scrollbar hack #2 */
+@media screen and (max-width: 50em) {
+    .list-title {
+        margin-right: 2vw;
+    }
 }

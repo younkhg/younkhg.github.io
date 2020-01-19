@@ -1,52 +1,44 @@
 <!DOCTYPE html>
-
+<html lang=en>
 <head>
-  <html lang=en>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Keehong Youn</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keehong Youn</title>
+<link rel="stylesheet" href="style.css">
+  
+</head>
 <body>
 
-<div class="nav-container">
+<nav>
     <a href="index.html">Keehong Youn</a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="about.html">About</a>
-</div>
+</nav>
 
 <div class="content-container">
 
     <h2>Scientific Visualization of Simulation Data in VR environment</h2>
 
   <p>
-  - Scientific visualization on different displays simulatneously: HMD VR, immersive VR, and desktop<br>
-  - Stereoscopic rendering of 3D material simulation data
+  - Stereoscopic rendering of 3D material simulation data<br>
+  - Simulatneously running on multiple displays of different kind: HMD VR, immersive VR, and desktop<br>
   </p>
 
-  <div class="body-img">
       <img src="img/vdv/vdv01.png">
-  </div>
 
     <p>This project focuses on cross-platform or cross-device visualization of scientific simulation data. Current data of interest is from dynamic MonteCarlo simulation by <a target="_blank" rel="noopener noreferrer" href="https://labs.materials.ucsb.edu/vanderven/anton/">Van der Ven Group</a>. The data with a three-dimensional parameter space (Temperature / Chemical Potential / Time step) is loaded and presented in different devices such as flat desktop computer screen, large scale immersive environment (<a target="_blank" rel="noopener noreferrer" href="http://www.allosphere.ucsb.edu/">AlloSphere</a>), and head-mounted display for personal vritual reality (HTC Vive). Due to large volume of the data, decompressing the original gzip files and extracting only the relevant slice of data within them only when needed as the user explores the parameter space.</p>
 
     <p>Work towards collaborative interaction on distributed systems. Support for displaying the datasets in the Vive HMD to use it and its controllers as a single user control device while others view the data on separate desktop/projector. This involved porting our interactive 3D pick-ray for use with VR controllers, as well as designing interaction modes for the headset. A person wearing the HMD can now more naturally rotate and understand the dataset structure, and has interactive control of the visualization and its parameters through the wireless devices.</p>
 
-  <div class="body-img">
       <img src="img/vdv/vdv03.jpg">
-      Application running in the immeersive AlloSphere VR environment
-  </div>
+      <div class="imgcaption">Application running in the immeersive AlloSphere VR environment</div>
 
-  <div class="body-img">
       <img src="img/vdv/vdv04.png">
-      Application running on a head mounted display and a wall projection simultaneously
-  </div>
+      <div class="imgcaption">Application running on a head mounted display and a wall projection simultaneously</div>
 
-  <div class="body-img">
       <img src="img/vdv/vdv02.png">
-  </div>
 
 </div>
 
 </body>
+</html>
