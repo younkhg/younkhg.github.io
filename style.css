@@ -1,9 +1,3 @@
-/* disable font boosting on mobile */
-/*html * {
-    max-height: 1000000px;
-}
-*/
-
 html {
     /* scrollbar hack #1 */
     margin-left: calc(100vw - 100%);
@@ -37,7 +31,7 @@ body img {
 
 .imgcaption {
   max-width: 34em; /* 0.68 of 50 */
-  margin: -0.5em auto 0.5em auto; /* relay img's 1.2em padding bottom*/
+  margin: -0.5em auto 0.5em auto; /* relay img's 0.5em padding bottom*/
   font-size: small;
   text-align: center;
 }
@@ -82,7 +76,11 @@ nav a {
   color: #1060a0;
 }
 
-/* scrollbar hack #2 */
+.page_nav {
+    padding-top: 2em;
+    text-align: center;
+}
+
 @media screen and (max-width: 50em) {
     .list-title {
         margin-right: 2vw;
