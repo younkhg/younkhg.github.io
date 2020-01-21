@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Caltrain Schedule</title>
+
+<style>
+html {
+    /* scrollbar hack #1 */
+    margin-left: calc(100vw - 100%);
+    margin-right: 0;
+
+    background-color: #F5F5F5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+body {
+  max-width: 40em; /* 0.8 of 50 */
+
+  color: #303030;
+  font: 1em sans-serif;
+  line-height: 1.5;
+  font-weight: normal;
+
+  margin: 2em auto;
+  padding: 0 1em; /* +1em left and right makes 40 */
+}
+
+body img {
+  display: block;
+  max-width: 38em; /* 0.76 of 50 */
+  margin: 0 auto;
+  padding: 0.5em 0;
+}
+
+.imgcaption {
+  max-width: 34em; /* 0.68 of 50 */
+  margin: -0.5em auto 0.5em auto; /* relay img's 0.5em padding bottom*/
+  font-size: small;
+  text-align: center;
+}
+
+/* scrollbar hack #2 */
+@media screen and (max-width: 50em) {
+    body {
+        max-width: 80vw
+    }
+    body img {
+        max-width: 76vw;
+        margin: 0 auto;
+    }
+    .imgcaption {
+      max-width: 68vw;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<h2>Caltrain Schedule</h2>
+
+<p style="text-align: center">
+From:
+<select id="from">
+<!-- to be filled with js -->
+</select>
+&nbsp;&nbsp;&nbsp;&nbsp;
+To:
+<select id="to">
+<!-- to be filled with js -->
+</select>
+&nbsp;&nbsp;&nbsp;&nbsp;
+On:
+<select id="on">
+    <option value=0>Weekdays</option>
+    <option value=1>Weekends</option>
+</select>
+</p>
+
+<table style="text-align: center; margin: 0 auto">
+    <thead>
+        <tr>
+            <th style="width: 10em">Departure</th>
+            <th style="width: 10em">Arrival</th>
+        </tr>
+    </thead>
+    <tbody id="table">
+        <!-- to be filled with js -->
+    </tbody>
+</table>
+
+</body>
+<script>
+
+    function addopt(selectelem, name, val) {
+        let opt = document.createElement("option");
+        opt.appendChild(document.createTextNode(name));
+        opt.value = val;
+        selectelem.appendChild(opt);
+    }
+
+    function addrow(tableelem, val0, val1) {
+        cell0 = document.createElement("td");
+        cell1 = document.createElement("td");
+
+        cell0.appendChild(document.createTextNode(val0));
+        cell1.appendChild(document.createTextNode(val1));
+
+        row = document.createElement("tr");
+        row.appendChild(cell0);
+        row.appendChild(cell1);
+
+        tableelem.appendChild(row);
+    }
+
+    function viewstr(val) {
+        let h = (val/100).toString(10).padStart(2, '0');
+        let m = (val%100).toString(10).padStart(2, '0');
+        return h + " : " + m;
+    }
+
+    let stations = [
+        "mountainview",
+        "sunnyvale"
+    ];
+
+    let weekdays_north = {
+        "sunnyvale": [
+            1400,
+            1600
+        ],
+        "mountainview": [
+            1500,
+            1700
+        ]
+    };
+
+    let weekdays_south = {
+        "sunnyvale": [
+            1400,
+            1600
+        ],
+        "mountainview": [
+            1500,
+            1700
+        ]
+    };
+
+    let weekends_north = {
+        "sunnyvale": [
+            900,
+            1000
+        ],
+        "mountainview": [
+            1100,
+            1400
+        ]
+    }
+
+    let weekends_south = {
+        "sunnyvale": [
+            900,
+            1000
+        ],
+        "mountainview": [
+            1100,
+            1400
+        ]
+    }
+
+    const from = document.getElementById("from");
+    const to = document.getElementById("to");
+    const on = document.getElementById("on");
+    const table = document.getElementById("table");
+
+    function updatetable(fromlist, tolist) {
+        if (fromlist.length != tolist.length) {
+            console.log("lists' lengths does not match");
+        }
+        while (table.hasChildNodes()) {  
+            table.removeChild(table.firstChild);
+        }
+        for (let i = 0; i < fromlist.length; i += 1) {
+            if (fromlist[i] < 0 || tolist[i] < 0) {
+                continue;
+            }
+            addrow(table, viewstr(fromlist[i]), viewstr(tolist[i]));
+        }
+    }
+
+    function onchange() {
+        if (on.value === "0") {
+            updatetable(weekdays[from.value], weekdays[to.value]);
+        }
+        else if (on.value === "1") {
+            updatetable(weekdays[from.value], weekdays[to.value]);
+        }
+        else {
+            console.log("unkown option for *on*");
+        }
+        console.log(from.value);
+        console.log(to.value);
+        console.log(on.value);
+    }
+
+    from.onchange = onchange;
+    to.onchange = onchange;
+    on.onchange = onchange;
+
+    addopt(from, "Sunnyvale", "sunnyvale");
+    addopt(from, "MountainView", "mountainview");
+    addopt(to, "Sunnyvale", "sunnyvale");
+    addopt(to, "MountainView", "mountainview");
+
+</script>
+</html>

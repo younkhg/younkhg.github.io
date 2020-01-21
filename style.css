@@ -38,6 +38,10 @@ body img {
 
 /* scrollbar hack #2 */
 @media screen and (max-width: 50em) {
+    html {
+        background-color: #F5F5F5;
+        margin: 0;
+    }
     body {
         max-width: 80vw
     }
@@ -47,6 +51,24 @@ body img {
     }
     .imgcaption {
       max-width: 68vw;
+    }
+}
+
+@media print{
+    html {
+        background-color: #FF0000;
+        margin: 0;
+    }
+    body {
+        max-width: 80%;
+        margin: 2em auto;
+    }
+    body img {
+        max-width: 76%;
+        margin: 0 auto;
+    }
+    .imgcaption {
+      max-width: 68%;
     }
 }
 
