@@ -174,18 +174,20 @@ On:
         ]
     }
 
-    const from = document.getElementById("from");
-    const to = document.getElementById("to");
-    const on = document.getElementById("on");
+    const fromselect = document.getElementById("from");
+    const toselect = document.getElementById("to");
+    const onselect = document.getElementById("on");
     const table = document.getElementById("table");
 
     function updatetable(fromlist, tolist) {
         if (fromlist.length != tolist.length) {
             console.log("lists' lengths does not match");
         }
+        console.log("removing children");
         while (table.hasChildNodes()) {  
             table.removeChild(table.firstChild);
         }
+        console.log("adding new rows");
         for (let i = 0; i < fromlist.length; i += 1) {
             if (fromlist[i] < 0 || tolist[i] < 0) {
                 continue;
@@ -195,28 +197,29 @@ On:
     }
 
     function onchange() {
-        if (on.value === "0") {
-            updatetable(weekdays[from.value], weekdays[to.value]);
+        console.log("onchange");
+        if (onselect.value === "0") {
+            updatetable(weekdays_north[fromselect.value], weekdays_north[toselect.value]);
         }
-        else if (on.value === "1") {
-            updatetable(weekdays[from.value], weekdays[to.value]);
+        else if (onselect.value === "1") {
+            updatetable(weekends_north[fromselect.value], weekends_north[toselect.value]);
         }
         else {
             console.log("unkown option for *on*");
         }
-        console.log(from.value);
-        console.log(to.value);
-        console.log(on.value);
+        console.log(fromselect.value);
+        console.log(toselect.value);
+        console.log(onselect.value);
     }
 
     from.onchange = onchange;
-    to.onchange = onchange;
-    on.onchange = onchange;
+    toselect.onchange = onchange;
+    onselect.onchange = onchange;
 
-    addopt(from, "Sunnyvale", "sunnyvale");
-    addopt(from, "MountainView", "mountainview");
-    addopt(to, "Sunnyvale", "sunnyvale");
-    addopt(to, "MountainView", "mountainview");
+    addopt(fromselect, "Sunnyvale", "sunnyvale");
+    addopt(fromselect, "MountainView", "mountainview");
+    addopt(toselect, "Sunnyvale", "sunnyvale");
+    addopt(toselect, "MountainView", "mountainview");
 
 </script>
 </html>
