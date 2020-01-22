@@ -11,7 +11,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body {
-  max-width: 40em; /* 0.8 of 50 */
+  max-width: 45em; /* 0.9 of 50 */
 
   color: #303030;
   font: 1em sans-serif;
@@ -19,56 +19,50 @@ body {
   font-weight: normal;
 
   margin: 2em auto;
-  padding: 0 1em; /* +1em left and right makes 40 */
+  padding: 0;
 }
 
 body img {
   display: block;
-  max-width: 38em; /* 0.76 of 50 */
+  max-width: 40em; /* 0.8 of 50 */
   margin: 0 auto;
   padding: 0.5em 0;
 }
 
 .imgcaption {
-  max-width: 34em; /* 0.68 of 50 */
+  max-width: 35em; /* 0.7 of 50 */
   margin: -0.5em auto 0.5em auto; /* relay img's 0.5em padding bottom*/
   font-size: small;
   text-align: center;
 }
 
-/* scrollbar hack #2 */
 @media screen and (max-width: 50em) {
-    html {
-        background-color: #F5F5F5;
-        margin: 0;
-    }
     body {
-        max-width: 80vw
+        max-width: 90vw
     }
     body img {
-        max-width: 76vw;
+        max-width: 80vw;
         margin: 0 auto;
     }
     .imgcaption {
-      max-width: 68vw;
+      max-width: 70vw;
     }
 }
 
 @media print{
     html {
-        background-color: #FF0000;
         margin: 0;
     }
     body {
-        max-width: 80%;
+        max-width: 90%;
         margin: 2em auto;
     }
     body img {
-        max-width: 76%;
+        max-width: 60%;
         margin: 0 auto;
     }
     .imgcaption {
-      max-width: 68%;
+      max-width: 50%;
     }
 }
 
@@ -89,7 +83,7 @@ nav a {
 }
 
 .list-title {
-  margin-right: 1em;
+  margin-right: 2.5em;
   margin-bottom: -0.8em; /* negate img's 1.2em padding top */
   padding-top: 0.5em; /* move away from elem above */
 }
@@ -105,6 +99,6 @@ nav a {
 
 @media screen and (max-width: 50em) {
     .list-title {
-        margin-right: 2vw;
+        margin-right: 5vw;
     }
 }
