@@ -47,6 +47,7 @@ code {
 pre code {
     display: block;
     padding: 1.0em;
+    white-space: pre-wrap;
 }
 
 .imgcaption {
@@ -95,7 +96,7 @@ pre code {
 
 <h1>D Language Series 01: Project Setup</h1>
 
-<p>D looked nice, especially the easy integration with C code seemed promising. While having most of the good points of C and C++, it also has standard build system and package manager. Here I am trying find out if it is pleasant to create a D application while getting part of the functionality from existing C libraries.</p>
+<p>D looked nice. Especially the easy integration with C code seemed promising. While having most of the good points of C and C++, it also has standard build system and package manager. Here I will try to create a D application with C library dependencies.</p>
 
 <p><a target="_blank" rel="noopener noreferrer" href="https://dlang.org">D language</a></p>
 <p><a target="_blank" rel="noopener noreferrer" href="https://dub.pm">DUB, D language package manager</a></p>
@@ -104,37 +105,28 @@ pre code {
 
 <p>DMD is official reference compiler for D.</p>
 
-<pre><code>File: main.d
-
+<pre><code>> cat main.d
 import std.stdio;
 void main()
 {
     writeln("Hello World!");
 }
-</code></pre>
-
-<pre><code>Terminal: compiling d code with dmd
-
 > dmd main.d
 > ./main.d
 Hello World!
 </code></pre>
 
-<p>With <code>rdmd</code> compilation and running can be done at one command.</p>
+<p>With <code>rdmd</code> compilation and running can be done with one command.</p>
 
-<pre><code>Terminal: compiling d code and running the otuput executable with rdmd
-
-> rdmd main.d
+<pre><code>> rdmd main.d
 Hello World!
 </code></pre>
 
 <h2>DUB</h2>
 
-<p>For complicated projects a project/package manager is necessary. DUB manages both the project and the dependencies.</p>
+<p>For complicated projects a project/package manager is necessary. DUB manages both the project and the dependencies. First, DUB can initialize a project directory.</p>
 
-<pre><code>Terminal: initializing a project with dub
-
-> dub init dproj
+<pre><code>> dub init dproj
 Package recipe format (sdl/json) [json]: 
 Name [dproj]: 
 Description [A minimal D application.]: 
@@ -153,13 +145,13 @@ dproj
 
 > cat dproj/dub.json 
 {
-	"authors": [
-		"Keehong Youn"
-	],
-	"copyright": "Copyright © 2020, Keehong Youn",
-	"description": "A minimal D application.",
-	"license": "MIT",
-	"name": "dproj"
+    "authors": [
+        "Keehong Youn"
+    ],
+    "copyright": "Copyright © 2020, Keehong Youn",
+    "description": "A minimal D application.",
+    "license": "MIT",
+    "name": "dproj"
 }
 
 > cat dproj/source/app.d 
@@ -167,15 +159,13 @@ import std.stdio;
 
 void main()
 {
-	writeln("Edit source/app.d to start your project.");
+    writeln("Edit source/app.d to start your project.");
 }
 </code></pre>
 
 <p>Building and running the project is also done with the same command <code>dub</code>.</p>
 
-<pre><code>Terminal: compile and run project with dub
-
-> cd dproj
+<pre><code>> cd dproj
 > dub
 Performing "debug" build using /Library/D/dmd/bin/dmd for x86_64.
 dproj ~master: building configuration "application"...
