@@ -96,14 +96,14 @@ pre code {
 
 <h1>D Language Series 01: Project Setup</h1>
 
-<p>D looked nice. Especially the easy integration with C code seemed promising. While having most of the good points of C and C++, it also has standard build system and package manager. Here I will try to create a D application with C library dependencies.</p>
+<p>D looked nice. Especially the easy integration with C code seemed promising. While having most of the good points similar to C and C++, it also has a standard build system that also works as a package manager. Here I will try to create a D application with C library dependencies.</p>
 
 <p><a target="_blank" rel="noopener noreferrer" href="https://dlang.org">D language</a></p>
 <p><a target="_blank" rel="noopener noreferrer" href="https://dub.pm">DUB, D language package manager</a></p>
 
 <h2>DMD</h2>
 
-<p>DMD is official reference compiler for D.</p>
+<p>DMD is the official reference compiler for D.</p>
 
 <pre><code>> cat main.d
 import std.stdio;
@@ -124,7 +124,7 @@ Hello World!
 
 <h2>DUB</h2>
 
-<p>For complicated projects a project/package manager is necessary. DUB manages both the project and the dependencies. First, DUB can initialize a project directory.</p>
+<p>DUB manages both the project and the dependencies. First, DUB can initialize a project.</p>
 
 <pre><code>> dub init dproj
 Package recipe format (sdl/json) [json]: 
@@ -176,7 +176,7 @@ Edit source/app.d to start your project.
 
 <h2>Next: working with C code</h2>
 
-<p>On upcoming next page, connecting C and D will be discussed.</p>
+<p>On upcoming next page, connecting C and D will be covered.</p>
 
 <p style="text-align:right;">Jan. 2020</p>
 
