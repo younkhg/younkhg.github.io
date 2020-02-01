@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+html {
+    /* scrollbar hack #1 */
+    margin-left: calc(100vw - 100%);
+    margin-right: 0;
+
+    background-color: #F5F5F5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+body {
+  max-width: 45em; /* 0.9 of 50 */
+
+  color: #303030;
+  font: 1em sans-serif;
+  line-height: 1.5;
+  font-weight: normal;
+
+  margin: 2em auto;
+  padding: 0 0 10em 0;
+}
+
+body img {
+  display: block;
+  max-width: 40em; /* 0.8 of 50 */
+  margin: 0 auto;
+  padding: 0.5em 0;
+}
+
+code {
+    font: 1em monospace;
+    color: #202020;
+    background-color: #E0E0E0;
+    padding: 0.2em 0.5em;
+}
+
+pre code {
+    display: block;
+    padding: 1.0em;
+}
+
+pre code .subject {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.imgcaption {
+  max-width: 35em; /* 0.7 of 50 */
+  margin: -0.5em auto 0.5em auto; /* relay img's 0.5em padding bottom*/
+  font-size: small;
+  text-align: center;
+}
+
+/* scrollbar hack #2 */
+@media screen and (max-width: 50em) {
+    body {
+        max-width: 90vw
+    }
+    body img {
+        max-width: 80vw;
+        margin: 0 auto;
+    }
+    .imgcaption {
+      max-width: 70vw;
+    }
+}
+
+@media print{
+    html {
+        margin: 0;
+    }
+    body {
+        max-width: 90%;
+        margin: 2em auto;
+    }
+    body img {
+        max-width: 60%;
+        margin: 0 auto;
+    }
+    .imgcaption {
+      max-width: 50%;
+    }
+}
+
+</style>
+
+<title>Page Title</title>
+</head>
+<body>
+
+<h2>Caltrain Schedule</h2>
+
+<p>
+this is paragraph <code>with code inside</code>
+</p>
+<pre><code>this is a code I write
+multiline
+< > works
+</code></pre>
+
+<img src="img/arg/arg04.jpeg">
+<div class="imgcaption">A view from top, professor JoAnn Kuchera-Morin, the director of AlloSphere Research Group interacting with the AlloSphere</div>
+
+</body>
+</html>

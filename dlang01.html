@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+html {
+    /* scrollbar hack #1 */
+    margin-left: calc(100vw - 100%);
+    margin-right: 0;
+
+    background-color: #F5F5F5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+body {
+  max-width: 45em; /* 0.9 of 50 */
+
+  color: #303030;
+  font: 1em sans-serif;
+  line-height: 1.5;
+  font-weight: normal;
+
+  margin: 2em auto;
+  padding: 0 0 10em 0;
+}
+
+body img {
+  display: block;
+  max-width: 40em; /* 0.8 of 50 */
+  margin: 0 auto;
+  padding: 0.5em 0;
+}
+
+code {
+    font: 1em monospace;
+    color: #202020;
+    background-color: #E0E0E0;
+    padding: 0.2em 0.5em;
+}
+
+pre code {
+    display: block;
+    padding: 1.0em;
+}
+
+.imgcaption {
+  max-width: 35em; /* 0.7 of 50 */
+  margin: -0.5em auto 0.5em auto; /* relay img's 0.5em padding bottom*/
+  font-size: small;
+  text-align: center;
+}
+
+/* scrollbar hack #2 */
+@media screen and (max-width: 50em) {
+    body {
+        max-width: 90vw
+    }
+    body img {
+        max-width: 80vw;
+        margin: 0 auto;
+    }
+    .imgcaption {
+      max-width: 70vw;
+    }
+}
+
+@media print{
+    html {
+        margin: 0;
+    }
+    body {
+        max-width: 90%;
+        margin: 2em auto;
+    }
+    body img {
+        max-width: 60%;
+        margin: 0 auto;
+    }
+    .imgcaption {
+      max-width: 50%;
+    }
+}
+
+</style>
+
+<title>D lang 01: Proj Setup</title>
+</head>
+<body>
+
+<h1>D Language Series 01: Project Setup</h1>
+
+<p>D looked nice, especially the easy integration with C code seemed promising. While having most of the good points of C and C++, it also has standard build system and package manager. Here I am trying find out if it is pleasant to create a D application while getting part of the functionality from existing C libraries.</p>
+
+<h2>DMD</h2>
+
+<p>DMD can compile D code.</p>
+
+<pre><code>File: main.d
+
+import std.stdio;
+void main()
+{
+    writeln("Hello World!");
+}
+</code></pre>
+
+<pre><code>Terminal: compiling d code with dmd
+
+> dmd main.d
+> ./main.d
+Hello World!
+</code></pre>
+
+<p>With <code>rdmd</code> compilation and running can be done at one command.</p>
+
+<pre><code>Terminal: compiling d code and running the otuput executable with rdmd
+
+> rdmd main.d
+Hello World!
+</code></pre>
+
+<h2>DUB</h2>
+
+<p>For complicated projects of course a manager is necessary. DUB manages both the project and the dependencies.</p>
+
+<pre><code>Terminal: initializing a project with dub
+
+> dub init dproj
+Package recipe format (sdl/json) [json]: 
+Name [dproj]: 
+Description [A minimal D application.]: 
+Author name [Keehong Youn]: 
+License [proprietary]: MIT
+Copyright string [Copyright © 2020, Keehong Youn]: 
+Add dependency (leave empty to skip) []: 
+Successfully created an empty project in '/Users/ykeeh/dproj'.
+Package successfully created in dproj
+
+> tree dproj
+dproj
+├── dub.json
+└── source
+    └── app.d
+
+> cat dproj/dub.json 
+{
+	"authors": [
+		"Keehong Youn"
+	],
+	"copyright": "Copyright © 2020, Keehong Youn",
+	"description": "A minimal D application.",
+	"license": "MIT",
+	"name": "dproj"
+}
+
+> cat dproj/source/app.d 
+import std.stdio;
+
+void main()
+{
+	writeln("Edit source/app.d to start your project.");
+}
+</code></pre>
+
+<p>Building and running the project is also done with the same command <code>dub</code>.</p>
+
+<pre><code>Terminal: compile and run project with dub
+
+> cd dproj
+> dub
+Performing "debug" build using /Library/D/dmd/bin/dmd for x86_64.
+dproj ~master: building configuration "application"...
+Linking...
+Running ./dproj 
+Edit source/app.d to start your project.
+</code></pre>
+
+<h2>Next: working with C code</h2>
+
+<p>On upcoming next page, connecting C and D will be discussed.</p>
+
+<p style="text-align:right;">Jan. 2020</p>
+
+</body>
+</html>
