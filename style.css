@@ -34,6 +34,7 @@ body img {
   margin: -0.5em auto 0.5em auto; /* relay img's 0.5em padding bottom*/
   font-size: small;
   text-align: center;
+  line-height: 1.5;
 }
 
 @media screen and (max-width: 50em) {
