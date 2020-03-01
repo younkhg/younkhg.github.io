@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+html {
+    /* scrollbar hack #1 */
+    margin-left: calc(100vw - 100%);
+    margin-right: 0;
+
+    background-color: #F5F5F5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: lighter;
+}
+
+body {
+  max-width: 45em; /* 0.9 of 50 */
+
+  color: #303030;
+  font: 1em sans-serif;
+  line-height: 1.8;
+  font-weight: lighter;
+
+  margin: 2em auto;
+  padding: 0 0 10em 0;
+}
+
+body img {
+  display: block;
+  max-width: 40em; /* 0.8 of 50 */
+  margin: 0 auto;
+  padding: 0.5em 0;
+}
+
+code {
+    font: 1em monospace;
+    color: #202020;
+    background-color: #E0E0E0;
+    padding: 0.2em 0.5em;
+}
+
+pre code {
+    display: block;
+    line-height: 1.5;
+    padding: 1.0em;
+    overflow-x: scroll;
+    white-space: pre;
+}
+
+.imgcaption {
+  max-width: 35em; /* 0.7 of 50 */
+  margin: -0.5em auto 0.5em auto; /* relay img's 0.5em padding bottom*/
+  font-size: small;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.note {
+    font: 1em monospace;
+    color: #202020;
+    background-color: #F0E080;
+    padding: 1em;
+}
+
+/* scrollbar hack #2 */
+@media screen and (max-width: 50em) {
+    body {
+        max-width: 90vw
+    }
+    body img {
+        max-width: 80vw;
+        margin: 0 auto;
+    }
+    .imgcaption {
+      max-width: 70vw;
+    }
+}
+
+@media print{
+    html {
+        margin: 0;
+    }
+    body {
+        max-width: 90%;
+        margin: 2em auto;
+    }
+    body img {
+        max-width: 60%;
+        margin: 0 auto;
+    }
+    .imgcaption {
+      max-width: 50%;
+    }
+    pre code {
+        overflow-x: hidden;
+        white-space: pre-wrap;
+    }
+}
+
+</style>
+
+<title>D lang 02: With C</title>
+</head>
+<body>
+
+<h1>D Language Series 02: Interfacing with C</h1>
+
+<p>Previously: <a target="_blank" rel="noopener noreferrer" href="dlang02.html">D Language Series 01: Project Setup</a></p>
+
+<p>Here a C++ code with C interface will be called from D application</p>
+
+<h2>Project structure</h2>
+
+<pre><code>> tree
+.
+├── c
+│   ├── compile.sh
+│   ├── header.h
+│   └── source.cpp
+├── dub.json
+└── source
+    ├── app.d
+    └── c.d
+
+2 directories, 9 files
+</code></pre>
+
+<h2>C code setup</h2>
+
+<p><code>header.h</code></p>
+
+<pre><code>#ifndef C_HEADER
+#define C_HEADER
+
+struct s
+{
+    int a;
+    float b;
+};
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+s foo(const char *str);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif
+</code></pre>
+
+<p><code>source.cpp</code></p>
+
+<pre><code>#include "header.h"
+
+#include <iostream>
+
+extern "C"
+{
+
+s foo(const char *str)
+{
+    std::cout << str << std::endl;
+    return {1, 3.0f};
+}
+
+}
+</code></pre>
+
+<p><code>compile.sh</code></p>
+
+<pre><code>#!/bin/bash
+c++ -std=c++17 -c source.cpp -o c.o
+ar -crs c.a c.o
+</code></pre>
+
+<h2>D code setup</h2>
+
+<p><code>dub.json</code> -- <code>"stdc++"</code> is needed to use code from c++ standard library. Linker flag <code>"c/c.a"</code> is given manually to link with the compiled library.</p>
+
+<pre><code>{
+    "authors": [
+        "Keehong Youn"
+    ],
+    "copyright": "Copyright © 2020, Keehong Youn",
+    "description": "interface with c",
+    "license": "MIT",
+    "name": "withc",
+    "libs": [
+        "stdc++",
+    ],
+    "lflags": [
+        "c/c.a",
+    ],
+}
+</code></pre>
+
+<p></p>
+
+<p><code>c.d</code> -- C interface is translated into D interface.</p>
+
+<pre><code>struct s
+{
+    int a;
+    float b;
+}
+
+extern (C)
+{
+
+s foo(const char *str);
+
+}
+</code></pre>
+
+<p><code>app.d</code> -- <code>c.d</code> file is included as module <code>c</code> (name of the file).</p>
+
+<pre><code>import c;
+
+import std.string;
+import std.stdio;
+
+void main()
+{
+    writeln("Interfacing with C.");
+
+    string q = "some string";
+    s ret = foo(toStringz(q));
+    writeln(ret.a);
+    writeln(ret.b);
+}
+</code></pre>
+
+<h2>Result</h2>
+
+<pre><code>> dub
+Performing "debug" build using /Library/D/dmd/bin/dmd for x86_64.
+withc ~master: building configuration "application"...
+Linking...
+Running ./withc 
+Interfacing with C.
+some string
+1
+3
+</code></pre>
+
+<p style="text-align:right;">Feb. 2020</p>
+
+</body>
+</html>

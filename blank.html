@@ -48,7 +48,8 @@ pre code {
     display: block;
     line-height: 1.5;
     padding: 1.0em;
-    white-space: pre-wrap;
+    overflow-x: scroll;
+    white-space: pre;
 }
 
 .imgcaption {
@@ -94,6 +95,10 @@ pre code {
     }
     .imgcaption {
       max-width: 50%;
+    }
+    pre code {
+        overflow-x: hidden;
+        white-space: pre-wrap;
     }
 }
 

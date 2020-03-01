@@ -48,7 +48,8 @@ pre code {
     display: block;
     line-height: 1.5;
     padding: 1.0em;
-    white-space: pre-wrap;
+    overflow-x: scroll;
+    white-space: pre;
 }
 
 .imgcaption {
@@ -94,6 +95,10 @@ pre code {
     }
     .imgcaption {
       max-width: 50%;
+    }
+    pre code {
+        overflow-x: hidden;
+        white-space: pre-wrap;
     }
 }
 
@@ -187,7 +192,8 @@ Edit source/app.d to start your project.
 
 <p>On upcoming next page, connecting C and D will be covered.</p>
 
-<p class="note">Link: to be posted</p>
+<!-- <p class="note">Link: to be posted</p> -->
+<p><a target="_blank" rel="noopener noreferrer" href="dlang02.html">D Language Series 02: Interfacing with C</a></p>
 
 <p style="text-align:right;">Jan. 2020</p>
 
