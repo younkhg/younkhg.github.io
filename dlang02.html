@@ -183,7 +183,7 @@ ar -crs c.a c.o
 
 <h2>D code setup</h2>
 
-<p><code>dub.json</code> -- <code>"stdc++"</code> is needed to use code from c++ standard library. Linker flag <code>"c/c.a"</code> is given manually to link with the compiled library.</p>
+<p><code>dub.json</code></p>
 
 <pre><code>{
     "authors": [
@@ -202,9 +202,7 @@ ar -crs c.a c.o
 }
 </code></pre>
 
-<p></p>
-
-<p><code>c.d</code> -- C interface is translated into D interface.</p>
+<p><code>c.d</code></p>
 
 <pre><code>struct s
 {
@@ -220,7 +218,7 @@ s foo(const char *str);
 }
 </code></pre>
 
-<p><code>app.d</code> -- <code>c.d</code> file is included as module <code>c</code> (name of the file).</p>
+<p><code>app.d</code></p>
 
 <pre><code>import c;
 
@@ -237,6 +235,8 @@ void main()
     writeln(ret.b);
 }
 </code></pre>
+
+<p>In <code>dub.josn</code>, <code>"stdc++"</code> is needed to use code from c++ standard library. Also the inker flag <code>"c/c.a"</code> is given manually to link with the compiled library. The C interface of the library is translated into D in <code>c.d</code> and then is included in <code>app.d</code> as the module with name <code>c</code></p>
 
 <h2>Result</h2>
 
