@@ -101,8 +101,8 @@ nav a {
   color: #303030;
   text-decoration: none;
 
-  font-size: medium;
-  font-weight: lighter;
+  font-size: small;
+  font-weight: normal;
   /* margin-right: 2.5rem; */
   /* margin-bottom: -0.5rem; */
   /* move away from elem above */
@@ -115,7 +115,7 @@ nav a {
   padding: 0.2rem 0.8rem;
   margin-right: 3.0rem;
   position: relative;
-  bottom: 2.5rem;
+  bottom: 2.2rem;
   border: thin solid black;
 }
 
@@ -135,6 +135,6 @@ nav a {
 
 @media screen and (max-width: 50rem) {
   .list-title {
-    margin-right: 5vw;
+    margin-right: 6vw;
   }
 }
