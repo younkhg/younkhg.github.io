@@ -1,11 +1,8 @@
 html {
-  /* scrollbar hack #1 */
   margin-left: calc(100vw - 100%);
   margin-right: 0;
-
   background-color: #F0F0EA;
 }
-
 
 body {
   max-width: 45rem; /* 0.9 of 50 */
@@ -49,6 +46,32 @@ img {
   font-weight: normal;
 }
 
+code {
+  font-family: monospace;
+  color: #202020;
+  background-color: #E0E0E0;
+  padding: 0.2rem 0.5rem;
+}
+
+pre code {
+  display: block;
+  line-height: 1.5;
+  padding: 1.0rem;
+  overflow-x: scroll;
+  white-space: pre;
+}
+
+.note {
+  font-family: monospace;
+  color: #202020;
+  background-color: #F0E080;
+  padding: 1rem;
+}
+
+select {
+  font-size: large;
+}
+
 @media screen and (max-width: 50rem) {
   body {
     max-width: 90vw
@@ -77,60 +100,8 @@ img {
   .imgcaption {
     max-width: 50%;
   }
-}
-
-/* site specific visual style */
-
-nav {
-  color: #303030;
-  font-size: medium;
-  margin-bottom: 2.0rem;
-}
-
-nav a {
-  color: #303030;
-  text-decoration: underline;
-  background-color: #E0E0E0;
-  padding: 0.2rem 0.5rem;
-  margin: 0.2rem 0.2rem;
-}
-
-.list-container {
-  text-align: right;
-}
-
-.list-title {
-  color: #303030;
-  text-decoration: none;
-
-  font-size: small;
-  text-decoration: underline;
-  background-color: #E0E0E0;
-
-  display: inline;
-  padding: 0.2rem 0.8rem;
-  margin-right: 3.0rem;
-  position: relative;
-  bottom: 2.2rem;
-  border: thin solid black;
-}
-
-.page_nav {
-  color: #AAAAAA;
-  padding-top: 2rem;
-  text-align: center;
-}
-
-.page_nav a {
-  color: #303030;
-  text-decoration: underline;
-  background-color: #E0E0E0;
-  padding: 0.2rem 0.2rem;
-  margin: 0.2rem 0.2rem;
-}
-
-@media screen and (max-width: 50rem) {
-  .list-title {
-    margin-right: 6vw;
-  }
+  pre code {
+        overflow-x: hidden;
+        white-space: pre-wrap;
+    }
 }

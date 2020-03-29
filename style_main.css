@@ -1,0 +1,59 @@
+nav {
+  color: #303030;
+  font-size: medium;
+  margin-bottom: 2.0rem;
+}
+
+nav a {
+  color: #303030;
+  text-decoration: underline;
+  background-color: #E0E0E0;
+  padding: 0.2rem 0.5rem;
+  margin: 0.2rem 0.2rem;
+}
+
+.list-container {
+  text-align: right;
+}
+
+.list-title {
+  color: #303030;
+  text-decoration: none;
+
+  font-size: small;
+  text-decoration: underline;
+  background-color: #E0E0E0;
+
+  display: inline;
+  padding: 0.2rem 0.8rem;
+  margin-right: 3.0rem;
+  position: relative;
+  bottom: 2.2rem;
+  border: thin solid black;
+}
+
+.page_nav {
+  color: #AAAAAA;
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.page_nav a {
+  color: #303030;
+  text-decoration: underline;
+  background-color: #E0E0E0;
+  padding: 0.2rem 0.2rem;
+  margin: 0.2rem 0.2rem;
+}
+
+@media screen and (max-width: 50rem) {
+  .list-title {
+    margin-right: 6vw;
+  }
+}
+
+@media print{
+  .list-title {
+    margin-right: 21%;
+  }
+}
