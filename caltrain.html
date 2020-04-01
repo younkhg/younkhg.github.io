@@ -15,16 +15,16 @@
 <table style="text-align: center; margin: 0 auto">
     <tbody>
         <tr>
-            <td>From</td>
-            <td><select id="from"></select></td>
+            <td style="padding-right: 1rem">From</td>
+            <td><select id="from" style="width: 8rem"></select></td>
         </tr>
         <tr>
-            <td>To</td>
-            <td><select id="to"></select></td>
+            <td style="padding-right: 1rem">To</td>
+            <td><select id="to" style="width: 8rem"></select></td>
         </tr>
         <tr>
-            <td>On</td>
-            <td><select id="on">
+            <td style="padding-right: 1rem">On</td>
+            <td><select id="on" style="width: 8rem">
                 <option value=0>Weekdays</option>
                 <option value=1>Weekends</option>
             </select></td>
@@ -76,11 +76,6 @@
         return h + " : " + m;
     }
 
-    let stations = [
-        "mountainview",
-        "sunnyvale"
-    ];
-
     let weekdays_north = {
         "sunnyvale": [
             1400,
@@ -89,6 +84,10 @@
         "mountainview": [
             1500,
             1700
+        ],
+        "paloalto": [
+            1400,
+            1600
         ]
     };
 
@@ -98,6 +97,10 @@
             1600
         ],
         "mountainview": [
+            1500,
+            1700
+        ],
+        "paloalto": [
             1500,
             1700
         ]
@@ -111,6 +114,10 @@
         "mountainview": [
             1100,
             1400
+        ],
+        "paloalto": [
+            1500,
+            1700
         ]
     }
 
@@ -122,6 +129,10 @@
         "mountainview": [
             1100,
             1400
+        ],
+        "paloalto": [
+            1500,
+            1700
         ]
     }
 
@@ -169,8 +180,26 @@
 
     addopt(fromselect, "Sunnyvale", "sunnyvale");
     addopt(fromselect, "MountainView", "mountainview");
+    addopt(fromselect, "PaloAlto", "paloalto");
     addopt(toselect, "Sunnyvale", "sunnyvale");
     addopt(toselect, "MountainView", "mountainview");
+    addopt(toselect, "PaloAlto", "paloalto");
+
+    fromselect.value = "sunnyvale"
+    toselect.value = "paloalto"
+
+    today = new Date();
+    today_weekday = today.getDay()
+    if (today_weekday == 0 || today_weekday == 6)
+    {
+        onselect.value = 1;
+    }
+    else
+    {
+        onselect.value = 0;
+    }
+
+    onchange();
 
 </script>
 </html>
