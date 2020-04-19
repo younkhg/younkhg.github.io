@@ -1,7 +1,7 @@
 html {
   margin-left: calc(100vw - 100%);
   margin-right: 0;
-  background-color: #F0F0F0;
+  background-color: #F5F5F5;
 }
 
 body {
@@ -9,7 +9,7 @@ body {
   color: #303030;
   font: normal medium sans-serif;
   margin: 2rem auto;
-  padding: 0 0 10rem 0;
+  padding: 0 0 2rem 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -17,12 +17,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-  line-height: 1.5;
+      /* font includes line-height so if put after line-height it will shadow existing value */
+  font: normal large serif;
+    line-height: 1.6;
 }
 
 li {
-  line-height: 1.2;
-  padding-bottom: 0.5rem;
+  line-height: 1.4;
+  padding-bottom: 0.4rem;
+  font-size: small;
 }
 
 a {
@@ -51,6 +54,7 @@ code {
   background-color: #E0E0E0;
   padding: 0.2rem 0.5rem;
 }
+
 
 pre code {
   display: block;
@@ -102,5 +106,5 @@ select {
   pre code {
         overflow-x: hidden;
         white-space: pre-wrap;
-    }
+  }
 }

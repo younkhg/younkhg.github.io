@@ -1,12 +1,14 @@
 nav {
   color: #303030;
-  font-size: medium;
+  font-size: small;
   margin-bottom: 2.0rem;
+  margin-left:-0.4rem;
 }
 
 nav a {
   color: #303030;
   text-decoration: underline;
+  text-decoration-color:#808080;
   background-color: #E0E0E0;
   padding: 0.2rem 0.5rem;
   margin: 0.2rem 0.2rem;
@@ -16,12 +18,14 @@ nav a {
   text-align: right;
 }
 
+.list-container a {
+  text-decoration-color:#808080;
+}
+
 .list-title {
   color: #303030;
-  text-decoration: none;
 
   font-size: small;
-  text-decoration: underline;
   background-color: #E0E0E0;
 
   display: inline;
