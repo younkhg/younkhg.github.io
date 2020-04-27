@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
       /* font includes line-height so if put after line-height it will shadow existing value */
-  font: normal large serif;
+  font: normal 1.3rem serif;
     line-height: 1.6;
 }
 

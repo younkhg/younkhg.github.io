@@ -45,6 +45,7 @@ nav a {
 .page_nav a {
   color: #303030;
   text-decoration: underline;
+  text-decoration-color:#808080;
   background-color: #E0E0E0;
   padding: 0.2rem 0.2rem;
   margin: 0.2rem 0.2rem;
