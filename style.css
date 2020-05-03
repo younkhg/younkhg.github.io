@@ -5,11 +5,14 @@ html {
 }
 
 body {
-  max-width: 45rem; /* 0.9 of 50 */
-  color: #303030;
-  font: normal medium sans-serif;
-  margin: 2rem auto;
-  padding: 0 0 2rem 0;
+    max-width: 45rem; /* 0.9 of 50 */
+    color: #303030;
+    font: normal medium sans-serif;
+    font-size: medium;
+    font-weight: normal;
+    font-family: 'Roboto', sans-serif;
+    margin: 2rem auto;
+    padding: 0 0 2rem 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -18,7 +21,9 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
       /* font includes line-height so if put after line-height it will shadow existing value */
-  font: normal 1.3rem serif;
+    font-size: medium;
+    font-weight: normal;
+    font-family: 'Noto Serif', serif;
     line-height: 1.6;
 }
 
@@ -49,23 +54,25 @@ img {
 }
 
 code {
-  font-family: monospace;
-  color: #202020;
-  background-color: #E0E0E0;
-  padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+    font-family: 'Roboto Mono', monospace;
+    color: #202020;
+    background-color: #E0E0E0;
+    padding: 0.2rem 0.5rem;
 }
 
 
 pre code {
-  display: block;
-  line-height: 1.5;
-  padding: 1.0rem;
-  overflow-x: scroll;
-  white-space: pre;
+    display: block;
+    font-size: 0.5rem;
+    line-height: 2.0;
+    padding: 1.0rem;
+    overflow-x: scroll;
+    white-space: pre;
 }
 
 .note {
-  font-family: monospace;
+  font-family: 'Roboto Mono', monospace;
   color: #202020;
   background-color: #F0E080;
   padding: 1rem;
