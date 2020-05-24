@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 html {
   margin-left: calc(100vw - 100%);
   margin-right: 0;
@@ -7,23 +9,22 @@ html {
 body {
     max-width: 45rem; /* 0.9 of 50 */
     color: #303030;
-    font: normal medium sans-serif;
     font-size: medium;
     font-weight: normal;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     margin: 2rem auto;
     padding: 0 0 2rem 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.0;
+  font-weight: normal;
 }
 
 p {
       /* font includes line-height so if put after line-height it will shadow existing value */
     font-size: medium;
     font-weight: normal;
-    font-family: 'Noto Serif', serif;
     line-height: 1.6;
 }
 
@@ -55,7 +56,7 @@ img {
 
 code {
     font-size: 0.8rem;
-    font-family: 'Roboto Mono', monospace;
+    font-family: monospace;
     color: #202020;
     background-color: #E0E0E0;
     padding: 0.2rem 0.5rem;
@@ -72,7 +73,7 @@ pre code {
 }
 
 .note {
-  font-family: 'Roboto Mono', monospace;
+  font-family: monospace;
   color: #202020;
   background-color: #F0E080;
   padding: 1rem;

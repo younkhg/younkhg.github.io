@@ -6,74 +6,73 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
 
-<title>D lang 02: With C</title>
+<title>D lang 03: Window</title>
 </head>
 <body>
 
-<h1>D Language Series 02: Interfacing with C</h1>
+<h1>D Language Series 03: Opening a Window</h1>
 
-<p>Previously: <a href="dlang01.html">D Language Series 01: Project Setup</a></p>
+<p>Previously: <a href="dlang02.html">D Language Series 02: Interfacing with C</a></p>
 
-<p>Here a C++ code with C interface will be called from D application</p>
+<p>Objective: Link GLFW C library to a D library and then link the D library to a D application to open a window.</p>
 
 <h2>Project structure</h2>
 
-<pre><code>> tree
-.
-├── c
-│   ├── compile.sh
-│   ├── header.h
-│   └── source.cpp
+<pre><code>.
+├── app0.d
+├── build_deps.sh
 ├── dub.json
+├── glfw
+│   ├── ...
+│   ...
 └── source
-    ├── app.d
-    └── c.d
-
-2 directories, 9 files
+    └── lib.d
 </code></pre>
 
-<h2>C code setup</h2>
+<h2>Build GLFW</h2>
 
-<p><code>header.h</code></p>
+<p>
+First build the GLFW library.
+</p>
 
-<pre><code>#ifndef C_HEADER
-#define C_HEADER
+<p><code>build_deps.sh</code></p>
 
-struct s
-{
-    int a;
-    float b;
-};
-
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-s foo(const char *str);
-
-#ifdef __cplusplus
-}
-#endif
-
-#endif
+<pre><code>#!/usr/bin/env bash
+mkdir -p build
+cmake -DCMAKE_BUILD_TYPE=Release -DGLFW_BUILD_EXAMPLES=OFF -DGLFW_BUILD_TESTS=OFF -DGLFW_BUILD_DOCS=OFF -DGLFW_INSTALL=OFF -Bbuild -Sglfw
+make -j 4 -C build
 </code></pre>
 
-<p><code>source.cpp</code></p>
+<p>
+This script will create <code>libglfw3.a</code> inside <code>build/src</code>. Note that the orginal header files are not needed since the interface will be anyway rewritten in D.
+</p>
 
-<pre><code>#include "header.h"
+<h2>Build D library and link GLFW</h2>
 
-#include &lt;iostream&gt;
+<p><code>dub.json</code></p>
 
-extern "C"
-{
-
-s foo(const char *str)
-{
-    std::cout << str << std::endl;
-    return {1, 3.0f};
+<pre><code>{
+    "authors": [
+        "Keehong Youn"
+    ],
+    "copyright": "Copyright © 2020, Keehong Youn",
+    "description": "A minimal D application.",
+    "license": "MIT",
+    "name": "linkglfw",
+    "targetType": "library",
+    "libs": [
+        "glfw3"
+    ],
+    "lflags": [
+        "-Lbuild/src"
+    ],
+    "lflags-osx": [
+        "-framework", "Cocoa",
+        "-framework", "IOKit",
+        "-framework", "CoreFoundation"
+    ]
 }
 
-}
 </code></pre>
 
 <p><code>compile.sh</code></p>

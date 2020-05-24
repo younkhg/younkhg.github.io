@@ -9,7 +9,6 @@ nav a {
   color: #303030;
   text-decoration: underline;
   text-decoration-color:#808080;
-  background-color: #E0E0E0;
   padding: 0.2rem 0.5rem;
   margin: 0.2rem 0.2rem;
 }
@@ -26,27 +25,26 @@ nav a {
   color: #303030;
 
   font-size: small;
-  background-color: #E0E0E0;
+  background-color: #FFFFFFCC;
 
   display: inline;
   padding: 0.2rem 0.8rem;
   margin-right: 3.0rem;
   position: relative;
   bottom: 2.2rem;
-  border: thin solid black;
 }
 
 .page_nav {
   color: #AAAAAA;
   padding-top: 2rem;
   text-align: center;
+  font-size: 0.75rem;
 }
 
 .page_nav a {
   color: #303030;
   text-decoration: underline;
   text-decoration-color:#808080;
-  background-color: #E0E0E0;
   padding: 0.2rem 0.2rem;
   margin: 0.2rem 0.2rem;
 }
