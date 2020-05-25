@@ -13,10 +13,17 @@ nav a {
 
 .list-container {
   text-align: right;
+  padding-top: 0.5rem;
 }
 
 .list-container a {
   text-decoration-color:#808080;
+}
+
+.list-container img {
+  max-width: 45rem;
+  width: 45rem;
+  margin-top: -0.5rem;
 }
 
 .list-title {
@@ -27,9 +34,9 @@ nav a {
 
   display: inline;
   padding: 0.2rem 0.8rem;
-  margin-right: 3.0rem;
+  margin-right: 1rem;
   position: relative;
-  bottom: 2.2rem;
+  bottom: 2.5rem;
 }
 
 .page_nav {
@@ -49,12 +56,20 @@ nav a {
 
 @media screen and (max-width: 50rem) {
   .list-title {
-    margin-right: 6vw;
+    margin-right: 2vw;
+  }
+  .list-container img {
+    max-width: 90vw;
+    width: 90vw;
   }
 }
 
 @media print{
   .list-title {
-    margin-right: 21%;
+    margin-right: 7%;
+  }
+  .list-container img {
+    max-width: 90%;
+    width: 90%;
   }
 }

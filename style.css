@@ -124,7 +124,7 @@ select {
     max-width: 50%;
   }
   pre code {
-        overflow-x: hidden;
-        white-space: pre-wrap;
+    overflow-x: hidden;
+    white-space: pre-wrap;
   }
 }
