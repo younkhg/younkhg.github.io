@@ -2,15 +2,13 @@ nav {
   color: #303030;
   font-size: small;
   margin-bottom: 2.0rem;
-  margin-left:-0.4rem;
 }
 
 nav a {
   color: #303030;
   text-decoration: underline;
   text-decoration-color:#808080;
-  padding: 0.2rem 0.5rem;
-  margin: 0.2rem 0.2rem;
+  margin-right: 0.5rem;
 }
 
 .list-container {
