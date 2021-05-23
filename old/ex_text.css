@@ -1,0 +1,29 @@
+/*p {
+    margin-bottom: 2rem;
+}*/
+
+/*p a img {
+    margin-top: -0.5rem;
+    max-width: 45rem;
+    width: 45rem;
+}*/
+
+/*a {
+  color: #101010;
+  text-decoration: underline;
+  text-decoration-color:#999999;
+}*/
+
+@media screen and (max-width: 50rem) {
+  p a img {
+    max-width: 90vw;
+    width: 90vw;
+  }
+}
+
+@media print{
+  p a img {
+    max-width: 90%;
+    width: 90%;
+  }
+}

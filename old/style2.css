@@ -11,6 +11,26 @@ nav a {
   margin-right: 0.5rem;
 }
 
+select {
+  font-size: large;
+}
+
+.note {
+  font-family: monospace;
+  color: #202020;
+  background-color: #F0E080;
+  padding: 1rem;
+}
+
+.imgcaption {
+  max-width: 35rem; /* 0.7 of 50 */
+  margin: -0.3rem auto 0.5rem auto; /* relay img's 0.5rem padding bottom*/
+  font-size: small;
+  text-align: center;
+  line-height: 1.2;
+  font-weight: normal;
+}
+
 .list-container {
   text-align: right;
   padding-top: 0.5rem;
@@ -62,6 +82,9 @@ nav a {
     max-width: 90vw;
     width: 90vw;
   }
+  .imgcaption {
+    max-width: 70vw;
+  }
 }
 
 @media print{
@@ -71,5 +94,8 @@ nav a {
   .list-container img {
     max-width: 90%;
     width: 90%;
+  }
+  .imgcaption {
+    max-width: 50%;
   }
 }
