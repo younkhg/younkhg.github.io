@@ -6,7 +6,7 @@
 html {
   margin-left: calc(100vw - 100%);
   margin-right: 0;
-  background-color: #F8F8F8;
+  background-color: #FFFFFF;
 }
 
 nav {
@@ -21,10 +21,10 @@ nav a {
 /* NOTE: font includes line-height so if put after line-height it will shadow existing value */
 body {
   max-width: 45rem; /* 0.9 of 50 */
-  color: #101010;
+  color: #000000;
   font-size: medium;
   font-weight: normal;
-  font-family: sans-serif;
+  font-family: Verdana,Helvetica,sans-serif;
   margin: 2rem auto;
   padding: 0 0 2rem 0;
   line-height: 1.6;
@@ -69,24 +69,23 @@ img {
 img + em {
   display: block;
   font-size: small;
-  font-family: sans-serif;
   text-align: center;
   line-height: 1.2;
   padding: 0 3rem;
 }
 
 code {
-    font-size: medium;
-    font-family: monospace;
+    font-size: small;
+    font-family: "Consolas","Courier","Courier New",monospace;
     color: #000000;
     background-color: #F0F0F0;
-    padding: 0.2rem 0.5rem;
+    padding: 0.2rem 0.3rem;
 }
 
 /* Markdown also converts to pre code */
 pre code {
   display: block;
-  padding: 1.0rem;
+  padding: 0.5rem;
   white-space: pre-wrap;
   margin-bottom: 1rem;
 }
@@ -99,7 +98,7 @@ blockquote {
   margin-left: 2rem;
   margin-right: 1rem;
   border-left: thick solid #CCCCCC;
-  font-family: serif;
+  font-family: Georgia,serif;
 }
 
 blockquote p {
